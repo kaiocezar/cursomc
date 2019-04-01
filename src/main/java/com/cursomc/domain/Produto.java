@@ -34,7 +34,7 @@ public class Produto implements Serializable {
 	@JoinTable(name = "Produto_Categoria",
 	joinColumns = @JoinColumn(name = "produto_id"),
 	inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-	@JsonBackReference
+	@JsonIgnore
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 	
 	@OneToMany(mappedBy="id.produto")
